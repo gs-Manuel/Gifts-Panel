@@ -23,8 +23,9 @@ import evt.AccionContinuar;
 import evt.AccionFiltro;
 import evt.AccionIdioma;
 import evt.AccionRetroceder;
+import evt.AccionSiguiente;
 import evt.EstadoCheckBox;
-import evt.AccionAñadir;
+import evt.AccionAÃ±adir;
 import evt.AccionBotonPanel;
 import evt.AccionCesta;
 import evt.AccionCombo;
@@ -69,8 +70,9 @@ public class VentanaPrincipal extends JFrame {
 	private AccionCesta aCesta;
 	private AccionFiltro aFiltro;
 	private EstadoCheckBox eCheckBox;
-	private AccionAñadir aAñadir;
+	private AccionAÃ±adir aAÃ±adir;
 	private AccionRetroceder aRetroceder;
+	private AccionSiguiente aSiguiente;
 
 	private CardLayout c = null;
 
@@ -126,7 +128,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton btnViajes;
 	private JPanel panelCombo;
 	private JComboBox<Premio> comboBox;
-	private JButton btnAñadir;
+	private JButton btnAÃ±adir;
 	private JButton btnCesta;
 	private JPanel panelImagenPremio;
 	private JPanel panelAdaptativo4;
@@ -172,8 +174,9 @@ public class VentanaPrincipal extends JFrame {
 		aCBx = new AccionCombo(this);
 		eCheckBox = new EstadoCheckBox(this);
 		aFiltro = new AccionFiltro(this);
-		aAñadir = new AccionAñadir(this);
+		aAÃ±adir = new AccionAÃ±adir(this);
 		aRetroceder = new AccionRetroceder(this);
+		aSiguiente = new AccionSiguiente(this);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1167, 660);
@@ -213,7 +216,7 @@ public class VentanaPrincipal extends JFrame {
 		btnViajes.setText(textos.getString("vc.Viajes"));
 		chckbxOptables.setText(textos.getString("vc.optables"));
 		chckbxTodos.setText(textos.getString("vc.todos"));
-		btnAñadir.setText(textos.getString("vc.añadir"));
+		btnAÃ±adir.setText(textos.getString("vc.aÃ±adir"));
 		btnCesta.setText(textos.getString("vc.cesta"));
 
 		// String imagenBandera = "/img/" + ;
@@ -228,26 +231,26 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Método que dependiendo del entero que recibe por parametro, muestra por
+	 * Mï¿½todo que dependiendo del entero que recibe por parametro, muestra por
 	 * pantalla el tipo de problema que tiene
 	 * 
 	 * @param i
 	 */
-	public void enseñaMensaje(int i) {
+	public void enseÃ±aMensaje(int i) {
 		if (i == 1) {
-			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseñaMensaje1"));
+			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseÃ±aMensaje1"));
 		}
 		if (i == 2) {
-			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseñaMensaje2"));
+			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseÃ±aMensaje2"));
 		}
 		if (i == 3) {
-			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseñaMensaje3"));
+			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseÃ±aMensaje3"));
 		}
 		if (i == 4) {
-			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseñaMensaje4"));
+			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseÃ±aMensaje4"));
 		}
 		if (i == 5) {
-			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseñaMensaje5"));
+			JOptionPane.showMessageDialog(this, getTextos().getString("vp.enseÃ±aMensaje5"));
 		}
 	}
 
@@ -750,7 +753,7 @@ public class VentanaPrincipal extends JFrame {
 			panelCombo.setBackground(new Color(152, 251, 152));
 			panelCombo.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			panelCombo.add(getComboBox());
-			panelCombo.add(getBtnAñadir());
+			panelCombo.add(getBtnAÃ±adir());
 			panelCombo.add(getBtnCesta_1());
 		}
 		return panelCombo;
@@ -767,14 +770,14 @@ public class VentanaPrincipal extends JFrame {
 		return comboBox;
 	}
 
-	public JButton getBtnAñadir() {
-		if (btnAñadir == null) {
-			btnAñadir = new JButton("");
-			btnAñadir.setEnabled(false);
-			btnAñadir.setBackground(Color.WHITE);
-			btnAñadir.addActionListener(aAñadir);
+	public JButton getBtnAÃ±adir() {
+		if (btnAÃ±adir == null) {
+			btnAÃ±adir = new JButton("");
+			btnAÃ±adir.setEnabled(false);
+			btnAÃ±adir.setBackground(Color.WHITE);
+			btnAÃ±adir.addActionListener(aAÃ±adir);
 		}
-		return btnAñadir;
+		return btnAÃ±adir;
 	}
 
 	private JPanel getPanelImagenPremio() {
@@ -845,7 +848,7 @@ public class VentanaPrincipal extends JFrame {
 			getTextPaneDescripcion().setText(((Premio) getComboBox().getSelectedItem()).getDescripcion());
 			return true;
 		} else {
-			JOptionPane.showMessageDialog(this, "No tiene suficientes puntos para optar a premios de esta categoría");
+			JOptionPane.showMessageDialog(this, "No tiene suficientes puntos para optar a premios de esta categorï¿½a");
 			return false;
 		}
 	}
@@ -994,10 +997,12 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnSiguiente() {
 		if (btnSiguiente == null) {
 			btnSiguiente = new JButton("Continuar");
+			btnSiguiente.addActionListener(aSiguiente);
 			btnSiguiente.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if(confirmarCancelacion()) {
 						juego.actualizaEntrega();
+
 					}
 				}
 			});

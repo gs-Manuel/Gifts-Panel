@@ -23,10 +23,10 @@ public class AccionCombo implements ActionListener{
 	}
 	public void tienePuntos() {
 		if((vP.getJuego().tienePuntos(((Premio) vP.getComboBox().getSelectedItem()).getPuntos()))) {
-			vP.getBtnAñadir().setEnabled(true);
+			vP.getBtnAÃ±adir().setEnabled(true);
 		}
 		else{
-			vP.getBtnAñadir().setEnabled(false);
+			vP.getBtnAÃ±adir().setEnabled(false);
 		}
 	}
 }

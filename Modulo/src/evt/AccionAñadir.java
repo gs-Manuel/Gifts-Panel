@@ -8,10 +8,10 @@ import igu.VentanaPrincipal;
 import logica.Pedido;
 import logica.Premio;
 
-public class AccionAñadir implements ActionListener{
+public class AccionAÃ±adir implements ActionListener{
 	VentanaPrincipal vP;
 
-	public AccionAñadir(VentanaPrincipal vP) {
+	public AccionAÃ±adir(VentanaPrincipal vP) {
 		this.vP = vP;
 	}
 	@Override
@@ -21,8 +21,8 @@ public class AccionAñadir implements ActionListener{
 	public void puedeComprar() {
 		Premio p = ((Premio) vP.getComboBox().getSelectedItem());
 		if((vP.getJuego().tienePuntos(p.getPuntos()))) {
-			vP.getBtnAñadir().setEnabled(true);
-			vP.getJuego().añadirACesta(p);
+			vP.getBtnAÃ±adir().setEnabled(true);
+			vP.getJuego().aÃ±adirACesta(p);
 			vP.getTextFieldPuntosPremios().setText(vP.getJuego().getPuntos()+ "");
 			vP.ActualizarModelo();
 		}

@@ -22,10 +22,10 @@ public class AccionContinuar implements ActionListener {
 						vP.getTextos().getString("vp.bienvenido") + " " + vP.getJuego().getCliente().getNombre());
 			}
 			else{
-				vP.enseñaMensaje(vP.getJuego().CompruebaCliente(vP.getTextFieldUsuario().getText()));
+				vP.enseÃ±aMensaje(vP.getJuego().CompruebaCliente(vP.getTextFieldUsuario().getText()));
 			}
 		} else {
-			vP.enseñaMensaje(vP.getJuego().compruebaDatos(vP.getTextFieldUsuario().getText()));
+			vP.enseÃ±aMensaje(vP.getJuego().compruebaDatos(vP.getTextFieldUsuario().getText()));
 		}
 	}
 }

@@ -36,12 +36,12 @@ public class Juego {
 	public Entrega getEntrega() {
 		return entrega;
 	}
-	public void añadirACesta(Premio premio) {
+	public void aÃ±adirACesta(Premio premio) {
 		Pedido pedido = new Pedido(premio, cliente.getId());
 		entrega.add(pedido);
 		puntos = puntos - premio.getPuntos();
 	}
-	public void añadirACesta(Premio premio, String observaciones, String fecha) {
+	public void aÃ±adirACesta(Premio premio, String observaciones, String fecha) {
 		Pedido pedido = new Pedido(premio, cliente.getId(), observaciones, fecha);
 		entrega.add(pedido);
 	}
@@ -108,7 +108,7 @@ public class Juego {
 	}
 
 	/**
-	 * Metodo que comprueba la posicion de la casilla que se le pasa por parámetro y
+	 * Metodo que comprueba la posicion de la casilla que se le pasa por parï¿½metro y
 	 * suma los puntos correspondientes
 	 * 
 	 * @param a
@@ -128,7 +128,7 @@ public class Juego {
 	}
 
 	/*
-	 * TODO: Metodos únicos
+	 * TODO: Metodos ï¿½nicos
 	 */
 	/**
 	 * Comprueba si el cliente dado puede existe en la base de datos y tiene
