@@ -9,3 +9,5 @@
 - Me planteo utilizar el plug-in JFormDesigner en vez de GUI Designer, en una investigación rápida, parece software más actualizado y tiene una documentación muy legible y fácil de entender.
 ### 12/07
 - Completo la migración del proyecto a intelij y descarto la opción de utilizar JFormDesigner al ver que es una herramienta de pago
+## 15/07 
+- Descubro JavaFX -> Framework más nuevo que Java Swing, es OpenSource.
