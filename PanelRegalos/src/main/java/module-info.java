@@ -4,5 +4,5 @@ module gonzalezsantos.manuel.panelregalos {
 
 
     opens gonzalezsantos.manuel.panelregalos to javafx.fxml;
-    exports gonzalezsantos.manuel.panelregalos;
+    exports gonzalezsantos.manuel.panelregalos.controlador;
 }
