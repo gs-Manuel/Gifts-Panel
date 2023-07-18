@@ -15,3 +15,6 @@
 - Me decido a Utilizar JavaFX para la interfaz de usuario
 - Utilizaré MVC(Modelo - Vista - Controlador)
 - Utilizaré Maven para gestionar las dependencias con mayor facilidad
+- Construyo el hola mundo básico con las herramientas
+## 18/07
+- Intento modificar el hola mundo básico implementando la organización de proyecto MVC -> da error de compilación debido al module-info
